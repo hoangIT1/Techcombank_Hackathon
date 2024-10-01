@@ -1,0 +1,52 @@
+{
+  "hash": "fd6d467f",
+  "configHash": "242db57a",
+  "lockfileHash": "8a20ba75",
+  "browserHash": "d852f05f",
+  "optimized": {
+    "@angular/core": {
+      "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "1c345044",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "cd43d3eb",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "995c53d5",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "c84b2e28",
+      "needsInterop": false
+    },
+    "pako": {
+      "src": "../../../../../node_modules/pako/dist/pako.esm.mjs",
+      "file": "pako.js",
+      "fileHash": "4ca4d506",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-PIHFLKJ4": {
+      "file": "chunk-PIHFLKJ4.js"
+    },
+    "chunk-CQRKIAEP": {
+      "file": "chunk-CQRKIAEP.js"
+    },
+    "chunk-4VXC56XQ": {
+      "file": "chunk-4VXC56XQ.js"
+    },
+    "chunk-WDMUDEB6": {
+      "file": "chunk-WDMUDEB6.js"
+    }
+  }
+}

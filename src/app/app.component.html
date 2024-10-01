@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="top-section">
+    <div class="image-box">
+      <!-- Box trái -->
+      <img [src]="imageLeftUrl" alt="Image Left" *ngIf="imageLeftUrl; else uploadLeft">
+      <ng-template #uploadLeft>
+        <p>No image uploaded for left side. Please upload a .puml file.</p>
+      </ng-template>
+      <input type="file" accept=".puml" (change)="onFileSelected($event, 'left')">
+    </div>
+    <div class="image-box">
+      <!-- Box phải -->
+      <img [src]="imageRightUrl" alt="Image Right" *ngIf="imageRightUrl; else uploadRight">
+      <ng-template #uploadRight>
+        <p>No image uploaded for right side. Please upload a .puml file.</p>
+      </ng-template>
+      <input type="file" accept=".puml" (change)="onFileSelected($event, 'right')">
+    </div>
+  </div>
+  <div class="compare-section">
+    <button (click)="compareImages()">Compare</button>
+  </div>
+  <div class="result-section">
+    <textarea placeholder="Comparison result will be shown here..." [(ngModel)]="comparisonResult"></textarea>
+  </div>
+</div>
