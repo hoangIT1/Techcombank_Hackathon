@@ -2,20 +2,29 @@
   <div class="top-section">
     <div class="image-box">
       <!-- Box trái -->
-      <img [src]="imageLeftUrl" alt="Image Left" *ngIf="imageLeftUrl; else uploadLeft">
+      <img 
+        [src]="imageLeftUrl" 
+        alt="Image Left" 
+        *ngIf="imageLeftUrl; else uploadLeft" 
+        style="max-width: 100%; max-height: 300px; object-fit: contain;">
       <ng-template #uploadLeft>
         <p>No image uploaded for left side. Please upload a .puml file.</p>
       </ng-template>
-      <input type="file" accept=".puml" (change)="onFileSelected($event, 'left')">
     </div>
+    <input type="file" accept=".puml" (change)="onFileSelected($event, 'left')" class="file-input-left">
+    
     <div class="image-box">
       <!-- Box phải -->
-      <img [src]="imageRightUrl" alt="Image Right" *ngIf="imageRightUrl; else uploadRight">
+      <img 
+        [src]="imageRightUrl" 
+        alt="Image Right" 
+        *ngIf="imageRightUrl; else uploadRight" 
+        style="max-width: 100%; max-height: 300px; object-fit: contain;">
       <ng-template #uploadRight>
         <p>No image uploaded for right side. Please upload a .puml file.</p>
       </ng-template>
-      <input type="file" accept=".puml" (change)="onFileSelected($event, 'right')">
     </div>
+    <input type="file" accept=".puml" (change)="onFileSelected($event, 'right')" class="file-input-right">
   </div>
   <div class="compare-section">
     <button (click)="compareImages()">Compare</button>

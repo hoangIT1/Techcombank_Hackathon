@@ -1,49 +1,65 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .top-section {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    margin-bottom: 20px;
-  }
-  
-  .image-box {
-    width: 45%;
-    height: 300px; /* Tạo box hình chữ nhật hoặc hình vuông */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #ccc;
-    text-align: center;
-  }
-  
-  .image-box img {
-    max-width: 100%;
-    max-height: 100%;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-  }
-  
-  .compare-section {
-    margin: 20px 0;
-  }
-  
-  .result-section {
-    width: 100%;
-  }
-  
-  textarea {
-    width: 100%;
-    height: 150px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    resize: none;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.top-section {
+  display: flex;
+  width: 100%;
+  justify-content: space-between; /* Thay đổi để có khoảng cách đều giữa các box */
+  margin-bottom: 20px;
+}
+
+.image-box {
+  width: 45%;
+  height: 300px; /* Tạo box hình chữ nhật hoặc hình vuông */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  text-align: center;
+  position: relative; /* Thêm position relative để sử dụng cho file input */
+}
+
+.image-box img {
+  max-width: 100%;
+  max-height: 100%;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.file-input-left, .file-input-right {
+  margin-top: 10px; /* Khoảng cách giữa file input và box */
+}
+
+.file-input-left {
+  position: absolute; /* Đặt vị trí tuyệt đối cho nút upload bên trái */
+  left: 10; /* Góc trái */
+  top: 320px; /* Khoảng cách từ trên xuống */
+}
+
+.file-input-right {
+  position: absolute; /* Đặt vị trí tuyệt đối cho nút upload bên phải */
+  right: 0; /* Góc phải */
+  top: 320px; /* Khoảng cách từ trên xuống */
+}
+
+.compare-section {
+  margin: 20px 0;
+}
+
+.result-section {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  resize: none;
+}
