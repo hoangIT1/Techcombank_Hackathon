@@ -1,45 +1,69 @@
+/* Đặt nền màu tối và màu chữ sáng để tăng độ tương phản */
+body {
+  background-color: #1e1e2e; /* Nền tối tinh tế */
+  color: #f0f0f0; /* Màu chữ sáng */
+  font-family: 'Helvetica', 'Arial', sans-serif; /* Font chữ hiện đại */
+  margin: 0;
+  padding: 0;
+}
+
+/* Banner header với nền gradient đẹp mắt */
+.banner-header {
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(90deg, #ff8a00, #e52e71); /* Hiệu ứng chuyển màu cho banner */
+  padding: 40px 0;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Đổ bóng cho banner */
+}
+
+.banner-header h1 {
+  font-size: 48px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.banner-header h2 {
+  font-size: 28px;
+  margin: 10px 0 0;
+  font-style: italic;
+  opacity: 0.9; /* Tạo hiệu ứng mờ nhẹ cho tiêu đề phụ */
+}
+
+/* Căn giữa các phần tử trong container */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
+  background-color: #1e1e2e;
 }
 
+/* Phần top-section với các box hình ảnh */
 .top-section {
   display: flex;
-  width: 100%;
-  justify-content: space-between; /* Thay đổi để có khoảng cách đều giữa các box */
-  margin-bottom: 20px;
+  width: 95%;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  margin-top: 20px;
 }
 
-
 .image-box {
-  width: 50%;
-  height: 350px;
+  width: 45%;
+  height: 500px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: aliceblue;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #ccc;
-  text-align: center;
+  border-radius: 12px; /* Góc bo tròn cho box */
+  background-color: #2e2e3d; /* Nền tối nhẹ nhàng cho box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Đổ bóng */
   position: relative;
-  overflow: hidden; /* To prevent image overflow when zoomed */
+  overflow: hidden; /* Ngăn hình ảnh tràn */
 }
-
-/* .image-box img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  transition: transform 0.3s ease; 
-}
-
-.zoom-in {
-  transform: scale(1.5); 
-}
-
-.zoom-out {
-  transform: scale(1); 
-} */
 
 .zoom-container {
   width: 100%;
@@ -50,54 +74,82 @@
   cursor: grab; /* Dragging cursor */
 }
 
+
 .zoom-container img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  transition: transform 0.3s ease; /* Smooth zoom effect */
+  transition: transform 0.3s ease;
 }
 
-.zoom-container img:active {
-  cursor: grabbing; /* Change cursor when dragging */
+.zoom-container img:hover {
+  transform: scale(1.1); /* Hiệu ứng zoom khi hover */
 }
 
+/* Thay đổi phong cách cho nút tải lên */
 .file-input-left, .file-input-right {
-  margin-top: 10px; /* Khoảng cách giữa file input và box */
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #ff8a00;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 6px;
+}
+
+.file-input-left:hover, .file-input-right:hover {
+  background-color: #e52e71; /* Hiệu ứng màu khi hover */
 }
 
 .file-input-left {
-  position: absolute; /* Đặt vị trí tuyệt đối cho nút upload bên trái */
-  left: 10; /* Góc trái */
-  top: 320px; /* Khoảng cách từ trên xuống */
+  position: absolute;
+  left: 50px;
+  top: 700px;
 }
 
 .file-input-right {
-  position: absolute; /* Đặt vị trí tuyệt đối cho nút upload bên phải */
-  right: 0; /* Góc phải */
-  top: 320px; /* Khoảng cách từ trên xuống */
+  position: absolute;
+  right: 50px;
+  top: 700px;
 }
 
-.compare-section {
-  margin: 20px 0;
+/* Style cho nút Compare */
+.compare-section button {
+  padding: 12px 24px;
+  background-color: #ff8a00;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.compare-section button:hover {
+  background-color: #e52e71; /* Hiệu ứng màu khi hover */
 }
 
 .result-section {
-  width: 100%;
+  align-items: center;
+  width: 95%;
+  margin-top: 20px;
 }
 
 textarea {
   width: 100%;
   height: 150px;
-  padding: 10px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: none;
+  border-radius: 8px;
+  background-color: #2e2e3d; /* Nền textarea tối */
+  color: #f0f0f0; /* Màu chữ sáng */
   resize: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ */
 }
 
-.w-100 {
-  width: 100%;
-}
-
-.d-flex {
-  display: flex;
+/* Định dạng chung cho các nút và input */
+button, input[type="file"] {
+  outline: none;
 }

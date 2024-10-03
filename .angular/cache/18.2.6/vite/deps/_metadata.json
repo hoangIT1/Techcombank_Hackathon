@@ -1,49 +1,64 @@
 {
-  "hash": "e46cac1b",
-  "configHash": "aa63a2da",
-  "lockfileHash": "4cf1af4c",
-  "browserHash": "f985470e",
+  "hash": "aaa7c74a",
+  "configHash": "20d76317",
+  "lockfileHash": "4092d7b3",
+  "browserHash": "eab592c0",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "979ebf10",
+      "fileHash": "c8c1b211",
+      "needsInterop": false
+    },
+    "@angular/common/http": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/http.mjs",
+      "file": "@angular_common_http.js",
+      "fileHash": "94cbb309",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "4bf93958",
+      "fileHash": "bb57a09e",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "cfc17dd1",
+      "fileHash": "910c9309",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "ff914186",
+      "fileHash": "e82963a2",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "c9338997",
+      "fileHash": "79a6e4c3",
       "needsInterop": false
+    },
+    "aws4": {
+      "src": "../../../../../node_modules/aws4/aws4.js",
+      "file": "aws4.js",
+      "fileHash": "a754aa8f",
+      "needsInterop": true
     },
     "plantuml-encoder": {
       "src": "../../../../../node_modules/plantuml-encoder/browser-index.js",
       "file": "plantuml-encoder.js",
-      "fileHash": "bb99c1ba",
+      "fileHash": "4a493616",
       "needsInterop": true
     }
   },
   "chunks": {
-    "chunk-4UV6354U": {
-      "file": "chunk-4UV6354U.js"
+    "chunk-TWEYAFTA": {
+      "file": "chunk-TWEYAFTA.js"
+    },
+    "chunk-XUTEODO3": {
+      "file": "chunk-XUTEODO3.js"
     },
     "chunk-DD2U46NU": {
       "file": "chunk-DD2U46NU.js"
