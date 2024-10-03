@@ -237,8 +237,8 @@ export class AppComponent {
       const client = new BedrockRuntimeClient({
         region: 'ap-northeast-1',
         credentials: {
-          accessKeyId: 'AKIASFIXC3L2YMYKFZTV',
-          secretAccessKey: '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',
+          accessKeyId: '****',
+          secretAccessKey: '****',
           credentialScope: 'bedrock'
         }
       });
