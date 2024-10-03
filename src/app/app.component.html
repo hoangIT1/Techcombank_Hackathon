@@ -39,6 +39,11 @@
     <h1>Techcombank Hackathon</h1>
     <h2>Seven Deadly Sins</h2>
   </div>
+
+  <div *ngIf="isLoading" class="loading-overlay">
+    <div class="loading-spinner"></div>
+  </div>
+
   <div class="top-section">
     <div class="image-box" #imageBoxLeft>
       <!-- Box trái -->

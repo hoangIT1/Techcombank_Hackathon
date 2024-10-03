@@ -7,8 +7,8 @@ import * as aws4 from 'aws4'; // Thêm aws4 để ký yêu cầu
   providedIn: 'root'
 })
 export class ApiService {
-  private accessKeyId = 'xxx'; // Thay bằng AccessKey thực tế
-  private secretAccessKey = 'xxx'; // Thay bằng SecretKey thực tế
+  private accessKeyId = 'AKIASFIXC3L2YMYKFZTV'; // Thay bằng AccessKey thực tế
+  private secretAccessKey = 'NEcvC7kAtyq830xx9fTMT2rwW6yURm0zhp1dBSyU'; // Thay bằng SecretKey thực tế
   private region = 'ap-northeast-1'; // Region thực tế
   private service = 'bedrock'; // Tên dịch vụ AWS
 

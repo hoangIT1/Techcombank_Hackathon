@@ -1,73 +1,67 @@
 {
-  "hash": "aaa7c74a",
-  "configHash": "20d76317",
-  "lockfileHash": "4092d7b3",
-  "browserHash": "eab592c0",
+  "hash": "5087fd89",
+  "configHash": "af95097c",
+  "lockfileHash": "fa81d1c4",
+  "browserHash": "0e4ede65",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "c8c1b211",
-      "needsInterop": false
-    },
-    "@angular/common/http": {
-      "src": "../../../../../node_modules/@angular/common/fesm2022/http.mjs",
-      "file": "@angular_common_http.js",
-      "fileHash": "94cbb309",
+      "fileHash": "3ee3e1af",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "bb57a09e",
+      "fileHash": "c3a733ab",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "910c9309",
+      "fileHash": "45b66038",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "e82963a2",
+      "fileHash": "0e9cb266",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "79a6e4c3",
+      "fileHash": "1425abbd",
       "needsInterop": false
     },
-    "aws4": {
-      "src": "../../../../../node_modules/aws4/aws4.js",
-      "file": "aws4.js",
-      "fileHash": "a754aa8f",
-      "needsInterop": true
+    "@aws-sdk/client-bedrock-runtime": {
+      "src": "../../../../../node_modules/@aws-sdk/client-bedrock-runtime/dist-es/index.js",
+      "file": "@aws-sdk_client-bedrock-runtime.js",
+      "fileHash": "4595a349",
+      "needsInterop": false
     },
     "plantuml-encoder": {
       "src": "../../../../../node_modules/plantuml-encoder/browser-index.js",
       "file": "plantuml-encoder.js",
-      "fileHash": "4a493616",
+      "fileHash": "f92bdb69",
       "needsInterop": true
     }
   },
   "chunks": {
-    "chunk-TWEYAFTA": {
-      "file": "chunk-TWEYAFTA.js"
+    "chunk-IBBNZAVR": {
+      "file": "chunk-IBBNZAVR.js"
     },
-    "chunk-XUTEODO3": {
-      "file": "chunk-XUTEODO3.js"
+    "chunk-LJYQWORE": {
+      "file": "chunk-LJYQWORE.js"
     },
-    "chunk-DD2U46NU": {
-      "file": "chunk-DD2U46NU.js"
+    "chunk-NNG572EX": {
+      "file": "chunk-NNG572EX.js"
     },
-    "chunk-AX42KMZE": {
-      "file": "chunk-AX42KMZE.js"
+    "chunk-N533DXHU": {
+      "file": "chunk-N533DXHU.js"
     },
-    "chunk-EIB7IA3J": {
-      "file": "chunk-EIB7IA3J.js"
+    "chunk-V4F5PRXT": {
+      "file": "chunk-V4F5PRXT.js"
     }
   }
 }
