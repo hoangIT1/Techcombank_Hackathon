@@ -1,25 +1,73 @@
-<div class="container">
+<!-- <div class="container">
   <div class="top-section">
     <div class="image-box">
+      <img
+        [src]="imageLeftUrl"
+        alt="Image Left"
+        *ngIf="imageLeftUrl; else uploadLeft"
+        [ngClass]="{'zoom-in': isZoomedInLeft, 'zoom-out': !isZoomedInLeft}"
+        (click)="toggleZoom('left')">
+      <ng-template #uploadLeft>
+        <p>No image uploaded for left side. Please upload a .puml file.</p>
+      </ng-template>
+    </div>
+    <input type="file" accept=".puml" (change)="onFileSelected($event, 'left')" class="file-input-left">
+
+    <div class="image-box">
+      <img
+        [src]="imageRightUrl"
+        alt="Image Right"
+        *ngIf="imageRightUrl; else uploadRight"
+        [ngClass]="{'zoom-in': isZoomedInRight, 'zoom-out': !isZoomedInRight}"
+        (click)="toggleZoom('right')">
+      <ng-template #uploadRight>
+        <p>No image uploaded for right side. Please upload a .puml file.</p>
+      </ng-template>
+    </div>
+    <input type="file" accept=".puml" (change)="onFileSelected($event, 'right')" class="file-input-right">
+  </div>
+  <div class="compare-section">
+    <button (click)="compareImages()">Compare</button>
+  </div>
+  <div class="result-section">
+    <textarea placeholder="Comparison result will be shown here..." [(ngModel)]="comparisonResult"></textarea>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="top-section">
+    <div class="image-box" #imageBoxLeft>
       <!-- Box trái -->
-      <img 
-        [src]="imageLeftUrl" 
-        alt="Image Left" 
-        *ngIf="imageLeftUrl; else uploadLeft" 
-        style="max-width: 100%; max-height: 300px; object-fit: contain;">
+      <div class="zoom-container" #zoomContainerLeft>
+        <img
+          [src]="imageLeftUrl"
+          alt="Image Left"
+          *ngIf="imageLeftUrl; else uploadLeft"
+          (mousedown)="onDragStart($event, zoomContainerLeft)"
+          (mousemove)="onDrag($event, zoomContainerLeft)"
+          (mouseup)="onDragEnd()"
+          (wheel)="onZoom($event, zoomContainerLeft)"
+        />
+      </div>
       <ng-template #uploadLeft>
         <p>No image uploaded for left side. Please upload a .puml file.</p>
       </ng-template>
     </div>
     <input type="file" accept=".puml" (change)="onFileSelected($event, 'left')" class="file-input-left">
     
-    <div class="image-box">
+    <div class="image-box" #imageBoxRight>
       <!-- Box phải -->
-      <img 
-        [src]="imageRightUrl" 
-        alt="Image Right" 
-        *ngIf="imageRightUrl; else uploadRight" 
-        style="max-width: 100%; max-height: 300px; object-fit: contain;">
+      <div class="zoom-container" #zoomContainerRight>
+        <img
+          [src]="imageRightUrl"
+          alt="Image Right"
+          *ngIf="imageRightUrl; else uploadRight"
+          (mousedown)="onDragStart($event, zoomContainerRight)"
+          (mousemove)="onDrag($event, zoomContainerRight)"
+          (mouseup)="onDragEnd()"
+          (wheel)="onZoom($event, zoomContainerRight)"
+        />
+      </div>
       <ng-template #uploadRight>
         <p>No image uploaded for right side. Please upload a .puml file.</p>
       </ng-template>

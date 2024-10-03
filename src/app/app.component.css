@@ -13,22 +13,52 @@
   margin-bottom: 20px;
 }
 
+
 .image-box {
-  width: 45%;
-  height: 300px; /* Tạo box hình chữ nhật hoặc hình vuông */
+  width: 50%;
+  height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid #ccc;
   text-align: center;
-  position: relative; /* Thêm position relative để sử dụng cho file input */
+  position: relative;
+  overflow: hidden; /* To prevent image overflow when zoomed */
 }
 
-.image-box img {
+/* .image-box img {
   max-width: 100%;
   max-height: 100%;
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
+  object-fit: contain;
+  transition: transform 0.3s ease; 
+}
+
+.zoom-in {
+  transform: scale(1.5); 
+}
+
+.zoom-out {
+  transform: scale(1); 
+} */
+
+.zoom-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab; /* Dragging cursor */
+}
+
+.zoom-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.zoom-container img:active {
+  cursor: grabbing; /* Change cursor when dragging */
 }
 
 .file-input-left, .file-input-right {
@@ -62,4 +92,12 @@ textarea {
   font-size: 16px;
   border: 1px solid #ccc;
   resize: none;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.d-flex {
+  display: flex;
 }
