@@ -1,25 +1,44 @@
 <!-- <div class="container">
+  <div class="banner-header">
+    <h1>Techcombank Hackathon</h1>
+    <h2>Seven Deadly Sins</h2>
+  </div>
+
+  <div *ngIf="isLoading" class="loading-overlay">
+    <div class="loading-spinner"></div>
+  </div>
+
   <div class="top-section">
-    <div class="image-box">
-      <img
-        [src]="imageLeftUrl"
-        alt="Image Left"
-        *ngIf="imageLeftUrl; else uploadLeft"
-        [ngClass]="{'zoom-in': isZoomedInLeft, 'zoom-out': !isZoomedInLeft}"
-        (click)="toggleZoom('left')">
+    <div class="image-box" #imageBoxLeft>
+      <div class="zoom-container" #zoomContainerLeft>
+        <img
+          [src]="imageLeftUrl"
+          alt="Image Left"
+          *ngIf="imageLeftUrl; else uploadLeft"
+          (mousedown)="onDragStart($event, zoomContainerLeft)"
+          (mousemove)="onDrag($event, zoomContainerLeft)"
+          (mouseup)="onDragEnd()"
+          (wheel)="onZoom($event, zoomContainerLeft)"
+        />
+      </div>
       <ng-template #uploadLeft>
         <p>No image uploaded for left side. Please upload a .puml file.</p>
       </ng-template>
     </div>
     <input type="file" accept=".puml" (change)="onFileSelected($event, 'left')" class="file-input-left">
-
-    <div class="image-box">
-      <img
-        [src]="imageRightUrl"
-        alt="Image Right"
-        *ngIf="imageRightUrl; else uploadRight"
-        [ngClass]="{'zoom-in': isZoomedInRight, 'zoom-out': !isZoomedInRight}"
-        (click)="toggleZoom('right')">
+    
+    <div class="image-box" #imageBoxRight>
+      <div class="zoom-container" #zoomContainerRight>
+        <img
+          [src]="imageRightUrl"
+          alt="Image Right"
+          *ngIf="imageRightUrl; else uploadRight"
+          (mousedown)="onDragStart($event, zoomContainerRight)"
+          (mousemove)="onDrag($event, zoomContainerRight)"
+          (mouseup)="onDragEnd()"
+          (wheel)="onZoom($event, zoomContainerRight)"
+        />
+      </div>
       <ng-template #uploadRight>
         <p>No image uploaded for right side. Please upload a .puml file.</p>
       </ng-template>
@@ -27,6 +46,11 @@
     <input type="file" accept=".puml" (change)="onFileSelected($event, 'right')" class="file-input-right">
   </div>
   <div class="compare-section">
+    <textarea [(ngModel)]="inputPrompt" 
+            placeholder="Enter prompt..." 
+            class="auto-expand-textarea" 
+            rows="1" 
+            (input)="autoExpand($event)"></textarea>
     <button (click)="compareImages()">Compare</button>
   </div>
   <div class="result-section">
@@ -63,6 +87,31 @@
       </ng-template>
     </div>
     <input type="file" accept=".puml" (change)="onFileSelected($event, 'left')" class="file-input-left">
+
+    <div class="middle-section">
+      <div class="comparison-result-box">
+        <div class="compare-section">
+          <textarea
+            [(ngModel)]="inputPrompt"
+            placeholder="Enter prompt..."
+            class="auto-expand-textarea"
+            rows="1"
+            (input)="autoExpand($event)"
+          ></textarea>
+          <button (click)="compareImages()">Compare</button>
+        </div>
+        <hr class="horizontal-divider">
+        <div class="result-section">
+          <textarea
+            class="result-textarea"
+            placeholder="Comparison result will be shown here..."
+            [(ngModel)]="comparisonResult"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    
+    
     
     <div class="image-box" #imageBoxRight>
       <!-- Box phải -->
@@ -82,11 +131,15 @@
       </ng-template>
     </div>
     <input type="file" accept=".puml" (change)="onFileSelected($event, 'right')" class="file-input-right">
+    
   </div>
-  <div class="compare-section">
-    <button (click)="compareImages()">Compare</button>
+  <div class="bottom-section">
+    <div class="puml-content" #pumlContentLeft>
+      <textarea class="puml-textarea" placeholder="Comparison result will be shown here..." [(ngModel)]="leftPUMLContent"></textarea>
+    </div>
+    <div class="puml-content" #pumlContentRight>
+      <textarea class="puml-textarea" placeholder="Comparison result will be shown here..." [(ngModel)]="rightPUMLContent"></textarea>
+    </div>
   </div>
-  <div class="result-section">
-    <textarea placeholder="Comparison result will be shown here..." [(ngModel)]="comparisonResult"></textarea>
-  </div>
+  
 </div>

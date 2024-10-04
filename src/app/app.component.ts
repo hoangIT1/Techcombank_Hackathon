@@ -183,6 +183,7 @@ export class AppComponent {
   imageRightUrl: string | null = null;
   comparisonResult: string = '';
   isLoading = false;
+  inputPrompt: string = '';
   private isDragging = false;
   private startX = 0;
   private startY = 0;
@@ -191,8 +192,8 @@ export class AppComponent {
   private scale = 1;
 
   // Biến lưu nội dung của file bên trái và phải
-  private leftPUMLContent: string = '';
-  private rightPUMLContent: string = '';
+  leftPUMLContent: string = '';
+  rightPUMLContent: string = '';
 
   onFileSelected(event: any, side: string) {
     const file = event.target.files[0];
@@ -237,14 +238,14 @@ export class AppComponent {
       const client = new BedrockRuntimeClient({
         region: 'ap-northeast-1',
         credentials: {
-          accessKeyId: '****',
-          secretAccessKey: '****',
+          accessKeyId: 'xxxx',
+          secretAccessKey: 'xxxx',
           credentialScope: 'bedrock'
         }
       });
 
       // Ghép nội dung hai file thành chuỗi so sánh
-      const comparisonContent = `Compare left: ${this.leftPUMLContent} and right: ${this.rightPUMLContent}`;
+      const comparisonContent = `Compare Source Code Diagram: ${this.leftPUMLContent} and DAB Diagram: ${this.rightPUMLContent} with ${this.inputPrompt} `;
 
       const data = JSON.stringify({
         system: "You are Claude, an AI assistant created by Anthropic to be helpful, harmless, and honest. Your goal is to provide informative and substantive responses to queries while avoiding potential harms.",
@@ -314,5 +315,11 @@ export class AppComponent {
 
   onDragEnd() {
     this.isDragging = false;
+  }
+
+  autoExpand(event: Event): void {
+    const textarea = event.target as HTMLTextAreaElement;
+    textarea.style.height = 'auto';  // Reset chiều cao để tính toán lại
+    textarea.style.height = `${textarea.scrollHeight}px`;  // Đặt chiều cao bằng với scrollHeight
   }
 }
